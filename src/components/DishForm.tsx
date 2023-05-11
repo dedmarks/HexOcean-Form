@@ -78,7 +78,6 @@ const DishForm = () => {
                 max={999}
                 validation={required}
               />
-              {err.name && <Error msg={err.name} />}
               <DishField
                 type="time"
                 name="preparation_time"
@@ -87,7 +86,6 @@ const DishForm = () => {
                 validation={required}
                 max={1}
               />
-              {err.preparation_time && <Error msg={err.preparation_time} />}
             </div>
             <div className="row">
               <div className="input_container">
@@ -103,7 +101,6 @@ const DishForm = () => {
                   <option value="soup">Soup</option>
                   <option value="sandwich">Sandwich</option>
                 </Field>
-                {err.type && <Error msg={err.type} />}
               </div>
             </div>
             {values.type === "pizza" && (
@@ -116,7 +113,6 @@ const DishForm = () => {
                   min={1}
                   max={50}
                 />
-                {err.no_of_slices && <Error msg={err.no_of_slices} />}
                 <DishField
                   validation={conditionalRequired}
                   type="number"
@@ -125,10 +121,8 @@ const DishForm = () => {
                   min={1}
                   max={99}
                 />
-                {err.diameter && <Error msg={err.diameter} />}
               </div>
             )}
-
             {values.type === "soup" && (
               <div className="row">
                 <DishField
@@ -139,10 +133,8 @@ const DishForm = () => {
                   min={0}
                   max={10}
                 />
-                {err.spiciness_scale && <Error msg={err.spiciness_scale} />}
               </div>
             )}
-
             {values.type === "sandwich" && (
               <div className="row">
                 <DishField
@@ -153,7 +145,6 @@ const DishForm = () => {
                   min={0}
                   max={99999}
                 />
-                {err.slices_of_bread && <Error msg={err.slices_of_bread} />}
               </div>
             )}
             <div className="row">
@@ -177,7 +168,54 @@ const DishForm = () => {
               </button>
             </div>
             <div className="response_msg">
-              <span>{msg}</span>
+              <span>
+                {err.no_of_slices && (
+                  <Error
+                    msg={err.no_of_slices
+                      .toString()
+                      .replace("this", "number of slices")}
+                  />
+                )}
+                {err.diameter && (
+                  <Error
+                    msg={err.diameter.toString().replace("this", "diameter")}
+                  />
+                )}
+                {err.slices_of_bread && (
+                  <Error
+                    msg={err.slices_of_bread
+                      .toString()
+                      .replace("this", "slices of bread")}
+                  />
+                )}
+                {err.spiciness_scale && (
+                  <Error
+                    msg={err.spiciness_scale
+                      .toString()
+                      .replace("this", "spiciness scale")}
+                  />
+                )}
+                {err.preparation_time && (
+                  <Error
+                    msg={err.preparation_time
+                      .toString()
+                      .replace("this", "preparation time")}
+                  />
+                )}
+                {err.name && (
+                  <Error msg={err.name.toString().replace("this", "name")} />
+                )}
+                {err.type && (
+                  <Error msg={err.type.toString().replace("this", "type")} />
+                )}
+                {!err.no_of_slices &&
+                  !err.diameter &&
+                  !err.slices_of_bread &&
+                  !err.spiciness_scale &&
+                  !err.preparation_time &&
+                  !err.name &&
+                  !err.type && <p>{msg}</p>}
+              </span>
             </div>
             <p>Response Data:</p>
             <pre>{JSON.stringify(resData, null, 2)}</pre>
