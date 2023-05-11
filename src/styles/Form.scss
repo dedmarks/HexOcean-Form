@@ -1,0 +1,47 @@
+@import "colors";
+
+.form_container {
+  font-family: "Titillium Web", sans-serif;
+  padding: 100px;
+  height: 1px;
+  margin-top: -40px;
+  margin-bottom: auto;
+  width: 400px;
+}
+
+.text_start {
+  color: $color-gray;
+}
+
+.row {
+  display: flex;
+  margin-top: 10px;
+
+  .btn_submit {
+    font-family: "Titillium Web", sans-serif;
+    background-color: $color-blue;
+    width: 100%;
+    color: white;
+    border-radius: 20px;
+    height: 40px;
+    border: none;
+  }
+
+  .btn_reset {
+    font-family: "Titillium Web", sans-serif;
+    border-radius: 20px;
+    width: 100%;
+    margin-right: 10px;
+    margin-left: 10px;
+    color: $color-darkblue;
+    background-color: $color-transparent;
+    height: 40px;
+    border: 1px solid $color-darkblue;
+  }
+}
+
+.response_msg {
+  height: 20px;
+  margin-top: 20px;
+  color: green;
+}
