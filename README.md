@@ -20,4 +20,4 @@ You will also see any lint errors in the console.
 
 ### `npm verion 8.19.1`
 
-### `node verion 8.19.1`
+### `node verion v18.19.1`
