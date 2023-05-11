@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 export const required = (value: any) =>
   value ? undefined : "This field is required";
 
