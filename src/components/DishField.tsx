@@ -9,7 +9,7 @@ interface FieldData {
   step: number;
   min: number;
   max: number;
-  validation: FieldValidator<any>;
+  validation: FieldValidator<never>;
 }
 
 const DishField: React.FC<FieldData> = ({
