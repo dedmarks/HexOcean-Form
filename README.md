@@ -1,5 +1,9 @@
 # HexOcean-Form
 
+### `live verions`
+
+https://645d2addb1627700082942ed--stellular-custard-7e3b8f.netlify.app/
+
 In the project directory, you can run:
 
 ### `npm install`
@@ -13,3 +17,7 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 The page will reload if you make edits.\
 You will also see any lint errors in the console.
+
+### `npm verion 8.19.1`
+
+### `node verion 8.19.1`
