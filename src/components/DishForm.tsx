@@ -26,10 +26,12 @@ const sleep = (ms: number): Promise<void> =>
 const DishForm = () => {
   const [err, setErr] = useState<MyExpectedResponseType>({});
   const [msg, setMsg] = useState("");
+  const [resData, setResData] = useState<FormValues>();
 
   const handleReset = () => {
     setMsg("");
     setErr({});
+    setResData(undefined);
   };
 
   const onSubmit = async (values: FormValues): Promise<void> => {
@@ -40,6 +42,7 @@ const DishForm = () => {
         values
       );
       console.log(response.data);
+      setResData(response.data);
       setMsg("Data submitted successfully!");
       setErr({});
     } catch (error) {
@@ -176,7 +179,8 @@ const DishForm = () => {
             <div className="response_msg">
               <span>{msg}</span>
             </div>
-            {/* <pre>{JSON.stringify(values, null, 2)}</pre> */}
+            <p>Response Data:</p>
+            <pre>{JSON.stringify(resData, null, 2)}</pre>
             {/* display data (values) object  */}
           </form>
         )}
