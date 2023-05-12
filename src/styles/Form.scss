@@ -9,6 +9,12 @@
   width: 400px;
 }
 
+@media only screen and (max-width: 600px) {
+  .form_container {
+    padding: 50px 4px;
+  }
+}
+
 .text_start {
   color: $color-gray;
 }
